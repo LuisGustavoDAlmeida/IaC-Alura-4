@@ -52,3 +52,8 @@ resource "aws_iam_role_policy" "beanstalk_ec2_policy" {
   }
   EOF
 }
+
+resource "aws_iam_instance_profile" "beanstalk_ec2_profile" {
+  name = "beanstalk-ec2-profile"
+  role = aws_iam_role.beanstalk_ec2.name
+}
